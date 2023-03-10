@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import './App.sass';
+import Layout from './Layout';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div 
+    className='app'
+    style={{ backgroundImage:`url(https://imrmedia.in/wp-content/uploads/2022/07/Hacker-are-the-backbone-of-cyber-armies.jpg)`,
+    backgroundRepeat:"no-repeat",
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundAttachment: 'fixed',
+    position:'absolute',
+    width:'100%',
+    height:'100%',
+    overflow: 'scroll',
+    }}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/*" element={<Layout />} />
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }
